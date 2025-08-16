@@ -1,0 +1,60 @@
+
+{
+  "name": "bolos",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["nome", "descricao", "ingredientes", "preco", "disponivel", "createdAt"],
+        "properties": {
+          "nome": {
+            "bsonType": "string",
+            "description": "Nome do sabor do bolo"
+          },
+          "descricao": {
+            "bsonType": "string",
+            "description": "Descrição detalhada do sabor"
+          },
+          "ingredientes": {
+            "bsonType": "array",
+            "description": "Lista de ingredientes principais"
+          },
+          "preco": {
+            "bsonType": "number",
+            "minimum": 0,
+            "description": "Preço do bolo no pote"
+          },
+          "imagem": {
+            "bsonType": "string",
+            "description": "URL da imagem do bolo"
+          },
+          "disponivel": {
+            "bsonType": "bool",
+            "description": "Se o sabor está disponível"
+          },
+          "categoria": {
+            "bsonType": "string",
+            "enum": ["morango", "chocolate", "especial"]
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "Criador do registro"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação ISO 8601"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização ISO 8601"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}
